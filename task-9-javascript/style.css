@@ -1,0 +1,27 @@
+#number{
+    margin: 5px;
+}
+#splits{
+    margin: 5px;
+}
+#bttn{
+    margin: 5px;
+    background-color: #3498db; /* Replace this with any color code */
+    color: white;              /* Text color */
+    border: none;             /* Removes the default border */
+    padding: 10px 20px;       /* Adjusts button size */
+    font-size: 16px;          /* Adjusts font size */
+    cursor: pointer;          /* Shows a pointer cursor on hover */
+    border-radius: 5px;
+
+}
+#result-container {
+    display: flex;
+    margin: 10px;
+}
+.result-box {
+    height: 60px;
+    width: 50px;
+    padding: 20px;
+    color: white;
+}

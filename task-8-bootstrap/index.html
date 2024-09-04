@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+         .card {
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        .card-title {
+            font-weight: bold;
+        }
+        .card-subtitle {
+            margin-bottom: 10px;
+        }
+        .date {
+            font-size: 12px;
+            color: #777;
+        }
+        .badge {
+            font-size: 12px;
+            padding: 5px 10px;
+            border-radius: 10px;
+        }
+        .navbar-brand, .nav-link {
+            font-weight: bold;
+        }
+    
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+        }
+        .sidebar {
+            background-color: #f1f3f4;
+            height: 100vh;
+        }
+        .sidebar .nav-link {
+            color: #333;
+            font-size: 1.25rem;
+        }
+        .sidebar .nav-link:hover {
+            background-color: #e2e6ea;
+        }
+        .content {
+            padding: 20px;
+        }
+        .project-stats {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+        .project-card {
+            border-radius: 15px;
+            padding: 20px;
+            color: #333;
+        }
+        .project-card h5 {
+            font-weight: bold;
+        }
+        .project-card .due-date {
+            color: #f88;
+            font-weight: bold;
+            font-size: 1rem;
+        }
+        .project-card .dot-menu {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            cursor: pointer;
+        }
+        .header-right {
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+ 
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Portfolio</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Calendar</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Settings</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+<div class="container-fluid">
+    <div class="row">
+        <!-- Sidebar -->
+        <div class="col-md-2 sidebar">
+            <nav class="nav flex-column pt-4">
+                <a class="nav-link" href="#"><i class="bi bi-house-door"></i> Home</a>
+                <a class="nav-link" href="#"><i class="bi bi-clock-history"></i> Projects</a>
+                <a class="nav-link" href="#"><i class="bi bi-calendar"></i> Calendar</a>
+                <a class="nav-link" href="#"><i class="bi bi-gear"></i> Settings</a>
+            </nav>
+        </div>
+
+        <!-- Main Content -->
+        <div class="col-md-10 content">
+            <div class="row">
+                <div class="col-8">
+                    <div class="project-stats">
+                        <strong>45</strong> In Progress &nbsp;&nbsp;
+                        <strong>24</strong> Upcoming &nbsp;&nbsp;
+                        <strong>62</strong> Total Projects
+                    </div>
+                </div>
+                <div class="col-4 header-right">
+                    <h4>August , 26</h4>
+                </div>
+            </div>
+
+            <!-- Project Cards -->
+            <div class="row">
+                <!-- Web Designing -->
+                <div class="col-md-4 mb-3">
+                    <div class="card project-card" style="background-color: #FFECB3; position: relative;">
+                        <div class="dot-menu"><i class="bi bi-three-dots"></i></div>
+                        <p>August 26, 2024</p>
+                        <h5>Web Designing</h5>
+                        <p>Prototyping</p>
+                        <div class="due-date">2 Days Left</div>
+                    </div>
+                </div>
+                <!-- Testing -->
+                <div class="col-md-4 mb-3">
+                    <div class="card project-card" style="background-color: #E1BEE7; position: relative;">
+                        <div class="dot-menu"><i class="bi bi-three-dots"></i></div>
+                        <p>August 26, 2024</p>
+                        <h5>Testing</h5>
+                        <p>Prototyping</p>
+                        <div class="due-date">2 Days Left</div>
+                    </div>
+                </div>
+                <!-- SVG Animations -->
+                <div class="col-md-4 mb-3">
+                    <div class="card project-card" style="background-color: #B2EBF2; position: relative;">
+                        <div class="dot-menu"><i class="bi bi-three-dots"></i></div>
+                        <p>August 26, 2024</p>
+                        <h5>Svg Animations</h5>
+                        <p>Prototyping</p>
+                        <div class="due-date">2 Days Left</div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <!-- UI Development -->
+                <div class="col-md-4 mb-3">
+                    <div class="card project-card" style="background-color: #FFCDD2; position: relative;">
+                        <div class="dot-menu"><i class="bi bi-three-dots"></i></div>
+                        <p>August 26, 2024</p>
+                        <h5>UI Development</h5>
+                        <p>Prototyping</p>
+                        <div class="due-date">2 Days Left</div>
+                    </div>
+                </div>
+                <!-- Data Analysis -->
+                <div class="col-md-4 mb-3">
+                    <div class="card project-card" style="background-color: #C8E6C9; position: relative;">
+                        <div class="dot-menu"><i class="bi bi-three-dots"></i></div>
+                        <p>August 26, 2024</p>
+                        <h5>Data Analysis</h5>
+                        <p>Prototyping</p>
+                        <div class="due-date">2 Days Left</div>
+                    </div>
+                </div>
+                <!-- Web Designing -->
+                <div class="col-md-4 mb-3">
+                    <div class="card project-card" style="background-color: #BBDEFB; position: relative;">
+                        <div class="dot-menu"><i class="bi bi-three-dots"></i></div>
+                        <p>August 26, 2024</p>
+                        <h5>Web Designing</h5>
+                        <p>Prototyping</p>
+                        <div class="due-date">2 Days Left</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.js"></script>
+</body>
+</html>

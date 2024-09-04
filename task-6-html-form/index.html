@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Information Form</title>
+</head>
+<body>
+    <h1>Patient Information Form</h1>
+    
+    <form action="/submit-patient-info" method="POST">
+        <!-- Patient Name -->
+        <label for="patientName">Name:</label>
+        <input type="text" id="patientName" name="name" required><br><br>
+        
+        <!-- Date of Birth -->
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob" required><br><br>
+        
+        <!-- Gender -->
+        <label>Gender:</label>
+        <input type="radio" id="male" name="gender" value="male">
+        <label for="male">Male</label>
+        <input type="radio" id="female" name="gender" value="female">
+        <label for="female">Female</label>
+        <input type="radio" id="other" name="gender" value="other">
+        <label for="other">Other</label><br><br>
+        
+        <!-- Contact Information -->
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" required><br><br>
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email"><br><br>
+        
+        <!-- Address -->
+        <label for="address">Address:</label><br>
+        <textarea id="address" name="address" rows="2" cols="50" required></textarea><br><br>
+        
+        <!-- Medical History -->
+        <label for="medicalHistory">Medical History:</label><br>
+        <textarea id="medicalHistory" name="medicalHistory" rows="4" cols="50"></textarea><br><br>
+        
+        <!-- Symptoms -->
+        <label for="symptoms">Symptoms:</label><br>
+        <textarea id="symptoms" name="symptoms" rows="4" cols="50" required></textarea><br><br>
+        
+        <!-- Insurance Information -->
+        <label for="insurance">Insurance Provider:</label>
+        <input type="text" id="insurance" name="insurance"><br><br>
+        
+        <label for="policyNumber">Policy Number:</label>
+        <input type="text" id="policyNumber" name="policyNumber"><br><br>
+        
+        <!-- Emergency Contact -->
+        <h3>Emergency Contact</h3>
+        <label for="emergencyContactName">Name:</label>
+        <input type="text" id="emergencyContactName" name="emergencyContactName" required><br><br>
+        
+        <label for="emergencyContactPhone">Phone Number:</label>
+        <input type="tel" id="emergencyContactPhone" name="emergencyContactPhone" required><br><br>
+        
+        <!-- Submit Button -->
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>

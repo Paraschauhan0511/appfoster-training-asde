@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Integer Number Splitter</title>
+  <h1>NUMBER SPLITTER</h1>
+  <style>
+   #number{
+    margin: 5px;
+}
+#splits{
+    margin: 5px;
+}
+#bttn{
+    margin: 5px;
+    background-color: #3498db; /* Replace this with any color code */
+    color: white;              /* Text color */
+    border: none;             /* Removes the default border */
+    padding: 10px 20px;       /* Adjusts button size */
+    font-size: 16px;          /* Adjusts font size */
+    cursor: pointer;          /* Shows a pointer cursor on hover */
+    border-radius: 5px;
+
+}
+#result-container {
+    display: flex;
+    margin: 10px;
+}
+.result-box {
+    height: 60px;
+    width: 50px;
+    padding: 20px;
+    color: white;
+}
+  </style>
+</head>
+<body>
+
+  <div>
+    <label for="number">Enter Number: </label>
+    <input type="number" id="number" value="10">
+    <label for="splits">Enter Number of Splits: </label>
+    <input type="number" id="splits" value="2">
+    <button onclick="splitNumber()">Split</button>
+  </div>
+
+  <div id="result" class="container"></div>
+
+  <script>
+    function splitNumber() {
+      const number = parseInt(document.getElementById("number").value);
+      const splits = parseInt(document.getElementById("splits").value);
+      const resultContainer = document.getElementById("result");
+
+      resultContainer.innerHTML = "";  // Clear previous results
+
+      if (splits <= 0 || isNaN(number) || isNaN(splits) || splits > number) {
+        alert("Please enter valid inputs where number >= splits.");
+        return;
+      }
+
+      // Calculate the base value for each split
+      const baseValue = Math.floor(number / splits);
+      let remainder = number % splits;  // Calculate the remainder
+
+      const splitValues = [];
+
+      // Distribute the baseValue, and give an extra 1 to the first 'remainder' splits
+      for (let i = 0; i < splits; i++) {
+        if (remainder > 0) {
+          splitValues.push(baseValue + 1);
+          remainder--;
+        } else {
+          splitValues.push(baseValue);
+        }
+      }
+
+      // No need to sort, as the larger values are already at the start due to remainder distribution
+
+      // Create divs based on the split values
+      splitValues.forEach(value => {
+        const div = document.createElement("div");
+        div.classList.add("box");
+        div.textContent = value;
+        div.style.width = `${value * 20}px`;  // Adjust width dynamically
+        div.style.backgroundColor = getRandomColor();
+        resultContainer.appendChild(div);
+      });
+    }
+
+    function getRandomColor() {
+      const letters = "0123456789ABCDEF";
+      let color = "#";
+      for (let i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+      }
+      return color;
+    }
+  </script>
+
+</body>
+</html>
+

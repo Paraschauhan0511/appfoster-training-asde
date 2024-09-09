@@ -3,64 +3,108 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Patient Information Form</title>
+    <title>Patient Registration Form</title>
+    <style>
+        body {
+            background-color: skyblue;
+            font-family: Arial, sans-serif;
+        }
+        fieldset {
+            margin-bottom: 20px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+        }
+        legend {
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+        form {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        label, input, textarea {
+            display: block;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+        input[type="submit"] {
+            width: auto;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
-    <h1>Patient Information Form</h1>
-    
-    <form action="/submit-patient-info" method="POST">
-        <!-- Patient Name -->
-        <label for="patientName">Name:</label>
-        <input type="text" id="patientName" name="name" required><br><br>
-        
-        <!-- Date of Birth -->
-        <label for="dob">Date of Birth:</label>
-        <input type="date" id="dob" name="dob" required><br><br>
-        
-        <!-- Gender -->
-        <label>Gender:</label>
-        <input type="radio" id="male" name="gender" value="male">
-        <label for="male">Male</label>
-        <input type="radio" id="female" name="gender" value="female">
-        <label for="female">Female</label>
-        <input type="radio" id="other" name="gender" value="other">
-        <label for="other">Other</label><br><br>
-        
-        <!-- Contact Information -->
-        <label for="phone">Phone Number:</label>
-        <input type="tel" id="phone" name="phone" required><br><br>
-        
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email"><br><br>
-        
-        <!-- Address -->
-        <label for="address">Address:</label><br>
-        <textarea id="address" name="address" rows="2" cols="50" required></textarea><br><br>
-        
-        <!-- Medical History -->
-        <label for="medicalHistory">Medical History:</label><br>
-        <textarea id="medicalHistory" name="medicalHistory" rows="4" cols="50"></textarea><br><br>
-        
-        <!-- Symptoms -->
-        <label for="symptoms">Symptoms:</label><br>
-        <textarea id="symptoms" name="symptoms" rows="4" cols="50" required></textarea><br><br>
-        
-        <!-- Insurance Information -->
-        <label for="insurance">Insurance Provider:</label>
-        <input type="text" id="insurance" name="insurance"><br><br>
-        
-        <label for="policyNumber">Policy Number:</label>
-        <input type="text" id="policyNumber" name="policyNumber"><br><br>
-        
-        <!-- Emergency Contact -->
-        <h3>Emergency Contact</h3>
-        <label for="emergencyContactName">Name:</label>
-        <input type="text" id="emergencyContactName" name="emergencyContactName" required><br><br>
-        
-        <label for="emergencyContactPhone">Phone Number:</label>
-        <input type="tel" id="emergencyContactPhone" name="emergencyContactPhone" required><br><br>
-        
-        <!-- Submit Button -->
+    <h2 style="text-align:center;">Patient Registration Form</h2>
+
+    <form action="/submit-patient" method="POST">
+        <!-- Primary Details Section -->
+        <fieldset>
+            <legend>Primary Details</legend>
+
+            <label for="fname">First Name:</label>
+            <input type="text" id="fname" name="fname" required>
+
+            <label for="lname">Last Name:</label>
+            <input type="text" id="lname" name="lname" required>
+
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" name="dob" required>
+
+            <label for="gender">Gender:</label>
+            <input type="radio" id="male" name="gender" value="male" required>
+            <label for="male">Male</label>
+            <input type="radio" id="female" name="gender" value="female" required>
+            <label for="female">Female</label>
+        </fieldset>
+
+        <!-- Contact Details Section -->
+        <fieldset>
+            <legend>Contact Details</legend>
+
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email">
+
+            <label for="email">Emerg.No:</label>
+            <input type="email" id="email" name="email">
+
+        </fieldset>
+
+        <!-- Address Details Section -->
+        <fieldset>
+            <legend>Address Details</legend>
+
+            <label for="permanent-address">Permanent Address:</label>
+            <textarea id="permanent-address" name="permanent-address" rows="4" cols="50"></textarea>
+
+            <label for="mailing-address">Mailing Address:</label>
+            <textarea id="mailing-address" name="mailing-address" rows="4" cols="50"></textarea>
+        </fieldset>
+
+        <!-- Medical and Insurance Details -->
+        <fieldset>
+            <legend>Other Details</legend>
+
+            <label for="medHistory">Medical History:</label>
+            <textarea id="medHistory" name="medHistory" rows="4" cols="50"></textarea>
+
+            <label for="insurance">Insurance Provider:</label>
+            <input type="text" id="insurance" name="insurance">
+        </fieldset>
+
+        <!-- Submit button -->
         <input type="submit" value="Submit">
     </form>
 </body>

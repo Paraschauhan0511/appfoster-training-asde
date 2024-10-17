@@ -1,0 +1,55 @@
+body {
+    background-color: #f7f7f7;
+}
+
+.container {
+    padding-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    font-size: larger;
+    font-weight: bold;
+}
+
+.user-details {
+    margin: 50px;
+}
+
+.user-list {
+    color: #007bff;
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid #ddd;
+    padding: 15px;
+}
+
+.view-more-btn {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.view-more-btn:hover {
+    background-color: #3f94ef;
+}
+
+.page-bottom {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.page-item {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.page-item.active {
+    background-color: #007bff;
+    color: #fff;
+}

@@ -3,109 +3,233 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Patient Registration Form</title>
+    <title>Patient Form</title>
     <style>
         body {
-            background-color: skyblue;
             font-family: Arial, sans-serif;
         }
-        fieldset {
-            margin-bottom: 20px;
+        .form-container {
+            width: 50%;
+            margin: auto;
             padding: 20px;
-            background-color: white;
-            border-radius: 8px;
+            border: 1px solid #ccc;
+            background-color: skyblue;
         }
-        legend {
-            font-weight: bold;
-            font-size: 1.2em;
+        .form-group {
+            margin-bottom: 15px;
         }
-        form {
-            max-width: 600px;
-            margin: 50px auto;
-            padding: 20px;
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        label, input, textarea {
+        .form-group label {
             display: block;
-            width: 100%;
-            margin-bottom: 10px;
+            margin-bottom: 5px;
         }
-        input[type="submit"] {
-            width: auto;
-            background-color: #4CAF50;
-            color: white;
-            padding: 10px 15px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+        .form-row {
+            display: flex;
+            justify-content: space-between;
+        }
+        .form-row .form-group {
+            flex-basis: 48%;
         }
     </style>
 </head>
 <body>
-    <h2 style="text-align:center;">Patient Registration Form</h2>
 
-    <form action="/submit-patient" method="POST">
-        <!-- Primary Details Section -->
-        <fieldset>
-            <legend>Primary Details</legend>
+<div class="form-container">
+    <h2>Patient Form</h2>
+    
+    <!-- Primary Details Section -->
+    <div class="form-group">
+        <label for="medicare">Medicare No:</label>
+        <input type="text" id="medicare" name="medicare">
+    </div>
+    
+    <div class="form-group">
+        <label for="title">Title:</label>
+        <select id="title" name="title">
+            <option value="none">None</option>
+            <option value="mr">Mr</option>
+            <option value="ms">Ms</option>
+            <option value="mrs">Mrs</option>
+            <option value="dr">Dr</option>
+        </select>
+    </div>
+    
+    <div class="form-group">
+        <label for="name">Name (Last, First, Middle):</label>
+        <input type="text" id="name" name="name">
+    </div>
+    
+    <div class="form-row">
+        <div class="form-group">
+            <label for="pref_name">Preferred Name:</label>
+            <input type="text" id="pref_name" name="pref_name">
+        </div>
+        <div class="form-group">
+            <label for="dob">DOB:</label>
+            <input type="date" id="dob" name="dob">
+        </div>
+    </div>
+    
+    <div class="form-group">
+        <label>Sex:</label>
+        <input type="radio" id="male" name="sex" value="male">
+        <label for="male">Male</label>
+        <input type="radio" id="female" name="sex" value="female">
+        <label for="female">Female</label>
+    </div>
+    
+    <div class="form-group">
+        <label for="family_name">Family Name:</label>
+        <input type="text" id="family_name" name="family_name">
+    </div>
+    
+    <!-- Contact Details Section -->
+    <h3>Contact Details</h3>
+    
+    <div class="form-row">
+        <div class="form-group">
+            <label for="home_phone">Home Phone:</label>
+            <input type="text" id="home_phone" name="home_phone">
+        </div>
+        <div class="form-group">
+            <label for="work_phone">Work Phone:</label>
+            <input type="text" id="work_phone" name="work_phone">
+        </div>
+    </div>
+    
+    <div class="form-group">
+        <label for="mobile">Mobile:</label>
+        <input type="text" id="mobile" name="mobile">
+    </div>
+    
+    <div class="form-group">
+        <label for="fax">Fax:</label>
+        <input type="text" id="fax" name="fax">
+    </div>
+    
+    <div class="form-row">
+        <div class="form-group">
+            <label for="next_kin">Next of Kin:</label>
+            <input type="text" id="next_kin" name="next_kin">
+        </div>
+        <div class="form-group">
+            <label for="next_kin_phone">Next of Kin Phone:</label>
+            <input type="text" id="next_kin_phone" name="next_kin_phone">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="Emerg_no">Emerg.no</label>
+        <input type="text" id="Emerg_no" name="Emerg_no">
+    </div>
+    <div class="form-group">
+        <label for="Email_id">Email</label>
+        <input type="text" id="Email_id" name="Email_id">
+    </div>
+    
+    <!-- Address Details Section -->
+    <h3>Address Details</h3>
+    
+    <div class="form-group">
+        <label for="address1">Address Line 1:</label>
+        <input type="text" id="address1" name="address1">
+    </div>
+    
+    <div class="form-group">
+        <label for="address2">Address Line 2:</label>
+        <input type="text" id="address2" name="address2">
+    </div>
+    
+    <div class="form-row">
+        <div class="form-group">
+            <label for="suburb">Suburb:</label>
+            <input type="text" id="suburb" name="suburb">
+        </div>
+        <div class="form-group">
+            <label for="state">State:</label>
+            <input type="text" id="state" name="state">
+        </div>
+    </div>
+    
+    <div class="form-group">
+        <label for="postal_code">Postal Code:</label>
+        <input type="text" id="postal_code" name="postal_code">
+    </div>
+    
+    <div class="form-group">
+        <label for="country">Country:</label>
+        <input type="text" id="country" name="country" value="country">
+    </div>
 
-            <label for="fname">First Name:</label>
-            <input type="text" id="fname" name="fname" required>
+   
+    <!-- Mailing Address -->
+     <h3>Mailing Address</h3>
+     <div class="form-group">
+        <label for="address_1">Address 1:</label>
+        <input type="text" id="address_1" name="address_1">
+    </div>
+    <div class="form-group">
+        <label for="address_2">Address 2:</label>
+        <input type="text" id="address_2" name="address_2">
 
-            <label for="lname">Last Name:</label>
-            <input type="text" id="lname" name="lname" required>
+    </div>
+    <div class="form-row">
+        <div class="form-group">
+            <label for="suburb">Suburb:</label>
+            <input type="text" id="suburb" name="suburb">
+        </div>
+        <div class="form-group">
+            <label for="state">State:</label>
+            <input type="text" id="state" name="state">
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group">
+            <label for="postal_code">Postal Code:</label>
+            <input type="text" id="postal_code" name="postal_code">
+        </div>
+        <div class="form-group">
+            <label for="country">Country:</label>
+            <input type="text" id="country" name="country">
+        </div>
+    </div>
+    
+    <div class="form-group">
+        <label for="Ihi_number">IHI Number:</label>
+        <input type="text" id="Ihi_number" name="Ihi_number">
 
-            <label for="dob">Date of Birth:</label>
-            <input type="date" id="dob" name="dob" required>
+    </div>
+    <div class="form-group">
+        <label for="number_status">Number Status:</label>
+        <input type="text" id="number_status" name="number_status" >
 
-            <label for="gender">Gender:</label>
-            <input type="radio" id="male" name="gender" value="male" required>
-            <label for="male">Male</label>
-            <input type="radio" id="female" name="gender" value="female" required>
-            <label for="female">Female</label>
-        </fieldset>
+    </div>
+    <div class="form-group">
+        <label for="record_status">Record Status:</label>
+        <input type="text" id="record_status" name="record_status">
 
-        <!-- Contact Details Section -->
-        <fieldset>
-            <legend>Contact Details</legend>
+    </div>
+    <div class="form-group">
+        <label for="last_updated">Last Updated:</label>
+        <input type="text" id="last_updated" name="last_updated" >
 
-            <label for="phone">Phone Number:</label>
-            <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required>
+    </div>
 
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email">
 
-            <label for="email">Emerg.No:</label>
-            <input type="email" id="email" name="email">
+    <!-- Submit Section -->
+    <div class="form-row">
+        <div class="form-group">
+            <button type="submit">Submit</button>
+        </div>
+        <div class="form-group">
+           <button tyoe="clear">Clear</button>
+        </div>
+    </div>
+    
+</div>
 
-        </fieldset>
-
-        <!-- Address Details Section -->
-        <fieldset>
-            <legend>Address Details</legend>
-
-            <label for="permanent-address">Permanent Address:</label>
-            <textarea id="permanent-address" name="permanent-address" rows="4" cols="50"></textarea>
-
-            <label for="mailing-address">Mailing Address:</label>
-            <textarea id="mailing-address" name="mailing-address" rows="4" cols="50"></textarea>
-        </fieldset>
-
-        <!-- Medical and Insurance Details -->
-        <fieldset>
-            <legend>Other Details</legend>
-
-            <label for="medHistory">Medical History:</label>
-            <textarea id="medHistory" name="medHistory" rows="4" cols="50"></textarea>
-
-            <label for="insurance">Insurance Provider:</label>
-            <input type="text" id="insurance" name="insurance">
-        </fieldset>
-
-        <!-- Submit button -->
-        <input type="submit" value="Submit">
-    </form>
 </body>
 </html>

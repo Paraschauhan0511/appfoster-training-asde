@@ -1,0 +1,63 @@
+body {
+
+    font-family: Arial, sans-serif;
+    padding: 30px;
+    margin-left:100px ;
+    margin-right: 100px;
+    border: solid black;
+    
+  }
+  .header {
+    display: flex;
+    align-items: center;
+   justify-content: space-between;
+  }
+  .info{
+    height: 40px;
+  }
+  .profile-picture {
+    width: 220px;
+    height: 220px;
+   /* border: 10px solid #5b4caf;*/
+    /* background-color: #f4f4f4 */
+
+  }
+  .header-info {
+    padding: .5em;
+    
+    background-color: #f4f4f4;
+  }
+  .mid{
+    background-color: #f4f4f4;
+    margin-top: 50px;
+    padding: 50px;
+  }
+  .skills ul {
+    list-style-type: none; /* To remove bullet points */
+    padding-left: 0;
+  }
+  
+  .skills li {
+    display: inline-block;
+    width: 45%; /* Adjust width as per your preference */
+    margin-bottom: 10px;
+  }
+  
+  .company{
+    color: #4caf50;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  table,
+  th,
+  td {
+    border: 1px solid #ddd;
+  }
+  th,
+  td {
+    padding: 10px;
+    text-align: left;
+  }

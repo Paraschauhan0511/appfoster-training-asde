@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Models\Student;
+use App\Models\Project;
 use Illuminate\Http\Request;
 
 class StudentController extends Controller
@@ -20,10 +21,40 @@ class StudentController extends Controller
         return view('students.index', compact('students'));
     }
 
+    public function store(Request $request)
+    {
+        // Validation rules
+        // $request->validate([
+        //     'name' => 'required|string|max:255',
+        //     'username' => 'required|string|max:255|unique:users,username',
+        //     'phone' => 'required|numeric',
+        //     'email' => 'required|email|max:255|unique:users,email',
+        //     'website' => 'nullable|string|max:255',
+        //     'company_name' => 'nullable|string|max:255',
+        // ]);
+        
+
+        // Create a new user in the database
+        Student::create($request->all());
+
+        // Redirect to a success page or back to the form
+        return redirect()->route('students.index')->with('success', 'User created successfully!');
+    }
+    
+    public function create()
+    {
+        // Return the view to display the form for creating a new student
+        return view('students.create');
+    }
+
+
+   
+
     // Show the form for editing the specified student
     public function edit($id)
     {
         $student = Student::findOrFail($id);
+      
         return view('students.edit', compact('student'));
     }
 
@@ -76,6 +107,11 @@ class StudentController extends Controller
     // Redirect back with a success message
     return redirect()->route('students.index')->with('success', 'Student updated successfully!');
   }
+  public function projects()
+{
+    return $this->hasMany(Project::class, 'student_id');
+}
+
 
 
 

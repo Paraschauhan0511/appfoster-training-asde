@@ -7,16 +7,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class Project extends Model
 {
-    use HasFactory;
+    protected $fillable = ['name', 'description', 'student_id'];
 
-    // Assuming your projects table is correctly named as 'projects'
-  
-    public $timestamps=false;
-    protected $fillable = ['user_id', 'title','body'] ;
-
-    // Define the inverse relationship with the Student model
     public function student()
     {
-        return $this->belongsTo(Student::class, 'student_id');
+        return $this->belongsTo(Student::class);
     }
 }
+    // app/Models/Project.php
+
+
+

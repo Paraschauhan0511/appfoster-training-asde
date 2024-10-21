@@ -1,4 +1,3 @@
-<!-- resources/views/students/index.blade.php -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,6 +21,12 @@
 <body>
     <div class="container mt-5">
         <h1 class="text-center">User List</h1>
+
+        <!-- Add User Button -->
+        <div class="d-flex justify-content-end mb-3">
+        <a href="{{ route('students.create') }}" class="btn btn-success">Add New User</a>
+        </div>
+
         <input type="text" id="search" class="form-control mb-3" placeholder="Search by name or email" onkeyup="filterTable()">
 
         <table class="table table-striped table-bordered mt-3">
@@ -37,15 +42,16 @@
                 @foreach ($students as $student)
                 <tr>
                   <td>{{ $student->id }}</td>
-                <td>{{ $student->name }}</td>
-                <td>{{ $student->email }}</td>
-                <td>
+                  <td>{{ $student->name }}</td>
+                  <td>{{ $student->email }}</td>
+                  <td>
                     <!-- View Button -->
                     <a href="{{ route('students.show', $student->id) }}" class="btn btn-info">View</a>
 
                     <!-- Edit Button -->
                     <a href="{{ route('students.edit', $student->id) }}" class="btn btn-warning">Edit</a>
-                     <!--Projects Button-->
+                    
+                    <!-- Projects Button -->
                     <a href="{{ route('students.projects', $student->id) }}" class="btn btn-primary">Project</a>
 
                     <!-- Delete Button -->
@@ -54,7 +60,7 @@
                         @method('DELETE')
                         <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this student?')">Delete</button>
                     </form>
-                </td>
+                  </td>
                 </tr>
 
                 <!-- Modal -->
@@ -116,4 +122,3 @@
     </script>
 </body>
 </html>
-

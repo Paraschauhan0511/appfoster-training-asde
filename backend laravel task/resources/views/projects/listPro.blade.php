@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <div class="bg-dark py-3">
+    <div class="bg-primary py-3">
         <h3 class="text-white text-center">Project List Of {{ $user->name }} </h3>
     </div>
 
@@ -25,7 +25,7 @@
             @endif
             <div class="col-md-12">
                 <div class="card  my-4">
-                    <div class="card-header bg-info">
+                    <div class="card-header bg-primary">
                         <h3 class="text-white">Projects Details</h3>
                     </div>
                     <div class="card-body">

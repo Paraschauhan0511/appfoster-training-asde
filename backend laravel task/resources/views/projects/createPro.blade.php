@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <div class="bg-dark py-3">
+    <div class="bg-primary py-3">
         <h3 class="text-white text-center">Add New Project for User {{ $user->id }}</h3>
     </div>
     <div class="container">
@@ -20,7 +20,7 @@
             </div>
             <div class="col-md-10">
                 <div class="card my-4">
-                    <div class="card-header bg-dark">
+                    <div class="card-header bg-primary">
                         <h3 class="text-white">Enter Project Details</h3>
                     </div>
                     <form action="{{ route('projects.store',$user->id) }}" method="post">

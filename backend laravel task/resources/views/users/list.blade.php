@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <div class="bg-dark py-3">
+    <div class="bg-primary py-3">
         <h3 class="text-white text-center">Users List</h3>
     </div>
     <div class="container">
@@ -27,7 +27,7 @@
             @endif
             <div class="col-md-12">
                 <div class="card  my-4">
-                    <div class="card-header bg-info">
+                    <div class="card-header bg-primary">
                         <h3 class="text-white">Users</h3>
                     </div>
                     <div class="card-body">
